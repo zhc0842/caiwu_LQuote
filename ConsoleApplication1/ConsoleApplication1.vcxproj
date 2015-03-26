@@ -14,7 +14,7 @@
     <ProjectGuid>{7DA62ECA-7C8D-40B4-B84A-AB0338EAB9DB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ConsoleApplication1</RootNamespace>
-    <ProjectName>test_map</ProjectName>
+    <ProjectName>ConsoleApplication1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
