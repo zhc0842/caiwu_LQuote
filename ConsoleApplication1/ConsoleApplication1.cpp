@@ -7,15 +7,49 @@
 #include <list>
 #include <string>
 #include <iostream>
+#include <fstream>
 
 #include <atltime.h>
 #include <minwinbase.h>
+#include "io.h"
+#include "direct.h"
 
+
+void try_map();
 void getTradeDate();
 
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
+{
+	
+	//try_map();
+
+	//getTradeDate();
+	
+	//tchar
+	TCHAR tc = '1';
+	char curDir[255];
+	_getcwd(curDir, sizeof(curDir));
+
+	string path("");
+	path.append("20130303/");//最后加上/ 才会创建目录
+	
+	ofstream fout;
+	fout.open(path.c_str());
+	if (!fout.is_open())
+	{
+		_mkdir(path.c_str());
+	}
+	else
+	{
+		fout.close();
+	}
+
+	return 0;
+}
+
+void try_map()
 {
 	map<long, list<string>> m1;
 	m1[1].push_back("aa");
@@ -23,17 +57,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	for (it = m1.begin(); it != m1.end(); it++)
 	{
 		cout << it->first << " | ";
-		cout << it->second.size()<<endl;
+		cout << it->second.size() << endl;
 	}
 	cout << "map--end" << endl;
-
-	//getTradeDate();
-
-	//tchar
-	TCHAR tc = '1';
-
-
-	return 0;
 }
 
 void getTradeDate()
